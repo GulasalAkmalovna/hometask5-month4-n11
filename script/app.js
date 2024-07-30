@@ -21,16 +21,58 @@
 // // Output: [1, 2, 3, 4]
 
 //TASK - 98
+// 98 - task
+// function doubleNumericValues(obj) {
+//     let newObj = {};
+//     for (let key in obj) {
+//        if (typeof obj[key] === "number") {
+//           newObj[key] = obj[key] * 2;
+//        } else {
+//           newObj[key] = obj[key];
+//        }
+//     }
+//     return newObj;
+//  }
+ 
+//  // // Test case
+//  const obj = {
+//     a: 1,
+//     b: {
+//        c: 2,
+//        d: {
+//           e: 3,
+//           f: 4,
+//        },
+//     },
+//  };
+//  console.log(doubleNumericValues(obj));
+//  // // Output: { a: 2, b: { c: 4, d: { e: 6, f: 8 } } }
+ 
 
-
-//TASK - 99
-
-
-
-//TASK - 100
-
-
-//TASK - 101
+// //TASK - 100
+// function transformStrings(obj, transformFunc) {
+//     if (typeof obj === "string") {
+//        return transformFunc(obj);
+//     } else if (typeof obj === "object" && obj !== null) {
+//        for (const key in obj) {
+//           obj[key] = transformStrings(obj[key], transformFunc);
+//        }
+//     }
+//     return obj;
+//  }
+ 
+// //  Test case
+//  const obj = {
+//     a: "hello",
+//     b: {
+//        c: "world",
+//        d: {
+//           e: "test",
+//        },
+//     },
+//  };
+//  console.log(transformStrings(obj, (str) => str.toUpperCase()));
+//  // Output: { a: "HELLO", b: { c: "WORLD", d: { e: "TEST" } } }
 
 
 //TASk - 102
