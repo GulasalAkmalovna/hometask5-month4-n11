@@ -21,32 +21,34 @@
 // // Output: [1, 2, 3, 4]
 
 //TASK - 98
-// 98 - task
-// function doubleNumericValues(obj) {
-//     let newObj = {};
-//     for (let key in obj) {
-//        if (typeof obj[key] === "number") {
-//           newObj[key] = obj[key] * 2;
-//        } else {
-//           newObj[key] = obj[key];
-//        }
-//     }
-//     return newObj;
-//  }
- 
-//  // // Test case
-//  const obj = {
-//     a: 1,
-//     b: {
-//        c: 2,
-//        d: {
-//           e: 3,
-//           f: 4,
-//        },
-//     },
-//  };
-//  console.log(doubleNumericValues(obj));
-//  // // Output: { a: 2, b: { c: 4, d: { e: 6, f: 8 } } }
+function doubleNumericValues(obj) {
+    let arr = [{value:obj, step:1}]
+    for(let i = 0; i < arr.length; i++){
+     const {value,step} = arr[i]
+     for (const key in value) {
+         if (typeof value[key] === "object") {
+             arr.push({value:value[key], step: step + 1})
+         }else if (typeof value[key] === "number") {
+             value[key] = value[key]*2
+         }
+     }
+    }
+    return obj
+  }
+  
+  // Test case
+  const obj = {
+      a: 1,
+      b: {
+          c: 2,
+          d: {
+              e: 3,
+              f: 4
+          }
+      }
+  };
+  console.log(doubleNumericValues(obj)); 
+  // Output: { a: 2, b: { c: 4, d: { e: 6, f: 8 } } }
  
 
 // //TASK - 100
